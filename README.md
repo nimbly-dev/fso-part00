@@ -72,7 +72,7 @@ sequenceDiagram
     Server-->>Browser: Return data.json
     deactivate Server
 
-    Note over Browser: Execute the callback function to render the <br> Updated Notes
+    Note over Browser: Execute the callback function to render the <br> Notes
 ```
 0.6: New note in Single page app diagram
 
