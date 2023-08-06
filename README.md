@@ -23,13 +23,19 @@ sequenceDiagram
     Server-->>Browser: Return main.css
     deactivate Server
 
+    Note over Browser: Implement styles on main.css
+
     Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate Server
     Server-->>Browser: Return main.js
     deactivate Server
 
+    Note over Browser: Start Executing the js file
+
     Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate Server
     Server-->>Browser: Return data.json
     deactivate Server
+
+    Note over Browser: Execute the callback function to render the <br> Updated Notes
 ```
