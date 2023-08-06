@@ -39,3 +39,39 @@ sequenceDiagram
 
     Note over Browser: Execute the callback function to render the <br> Updated Notes
 ```
+
+0.5: Single page app diagram
+
+```mermaid
+sequenceDiagram
+    participant Browser
+    participant Server
+
+    Note over Browser: Visit the Page
+    Browser->>+Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate Server
+    Server-->>Browser: Return the DOC html file.
+    deactivate Server
+
+    Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate Server
+    Server-->>Browser: Return main.css
+    deactivate Server
+
+    Note over Browser: Implement styles on main.css
+
+    Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate Server
+    Server-->>Browser: Return spa.js
+    deactivate Server
+
+    Note over Browser: Start Executing the js file
+
+    Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate Server
+    Server-->>Browser: Return data.json
+    deactivate Server
+
+    Note over Browser: Execute the callback function to render the <br> Updated Notes
+```
+
